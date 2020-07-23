@@ -17,14 +17,12 @@ namespace EsercizioLEtturaFile
         {
             InitializeComponent();
         }
-        private StreamReader fileStream;
         private void btn_caricaFile_Click(object sender, EventArgs e)
         {
             var dlgResult = openFileDialog1.ShowDialog();
             if (dlgResult == DialogResult.OK)
             {
                 label1.Text = openFileDialog1.FileName;
-                fileStream = new StreamReader(openFileDialog1.FileName);
             }
             else
             {
@@ -32,12 +30,29 @@ namespace EsercizioLEtturaFile
             }
         }
 
-        private void btn_leggiRiga_Click(object sender, EventArgs e)
+        private void btn_leggi_Click(object sender, EventArgs e)
         {
-            if(fileStream != null)
+            textBox1.Text = string.Empty;
+            using (StreamReader fileStream = new StreamReader(openFileDialog1.FileName))
             {
-                textBox1.Text += $"{Environment.NewLine}{fileStream.ReadLine()}";
-            }          
+                string line;
+                while ((line = fileStream.ReadLine()) != null)
+                {
+                    textBox1.Text += $"{line}{Environment.NewLine}";
+                }
+                textBox1.Text += "FINE DEL FILE";
+            }
+        }
+
+        private void btn_scrivi_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(openFileDialog1.FileName,true))
+            {
+                streamWriter.WriteLine("riga inserita da codice");
+                streamWriter.WriteLine("altra riga inserita da codice");
+                streamWriter.Flush();
+                streamWriter.WriteLine("ennesima riga inserita da codice");
+            }
         }
     }
 }

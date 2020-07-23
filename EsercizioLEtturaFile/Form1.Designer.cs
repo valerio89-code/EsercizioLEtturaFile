@@ -31,8 +31,9 @@
             this.btn_caricaFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_leggiRiga = new System.Windows.Forms.Button();
+            this.btn_leggi = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_scrivi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_caricaFile
@@ -61,31 +62,42 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // btn_leggiRiga
+            // btn_leggi
             // 
-            this.btn_leggiRiga.Location = new System.Drawing.Point(52, 183);
-            this.btn_leggiRiga.Name = "btn_leggiRiga";
-            this.btn_leggiRiga.Size = new System.Drawing.Size(163, 102);
-            this.btn_leggiRiga.TabIndex = 2;
-            this.btn_leggiRiga.Text = "Leggi riga successiva";
-            this.btn_leggiRiga.UseVisualStyleBackColor = true;
-            this.btn_leggiRiga.Click += new System.EventHandler(this.btn_leggiRiga_Click);
+            this.btn_leggi.Location = new System.Drawing.Point(52, 170);
+            this.btn_leggi.Name = "btn_leggi";
+            this.btn_leggi.Size = new System.Drawing.Size(163, 102);
+            this.btn_leggi.TabIndex = 2;
+            this.btn_leggi.Text = "Leggi file";
+            this.btn_leggi.UseVisualStyleBackColor = true;
+            this.btn_leggi.Click += new System.EventHandler(this.btn_leggi_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(334, 183);
+            this.textBox1.Location = new System.Drawing.Point(292, 127);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 218);
+            this.textBox1.Size = new System.Drawing.Size(465, 286);
             this.textBox1.TabIndex = 3;
+            // 
+            // btn_scrivi
+            // 
+            this.btn_scrivi.Location = new System.Drawing.Point(52, 311);
+            this.btn_scrivi.Name = "btn_scrivi";
+            this.btn_scrivi.Size = new System.Drawing.Size(163, 102);
+            this.btn_scrivi.TabIndex = 4;
+            this.btn_scrivi.Text = "Scrivi file";
+            this.btn_scrivi.UseVisualStyleBackColor = true;
+            this.btn_scrivi.Click += new System.EventHandler(this.btn_scrivi_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_scrivi);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btn_leggiRiga);
+            this.Controls.Add(this.btn_leggi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_caricaFile);
             this.Name = "Form1";
@@ -100,8 +112,9 @@
         private System.Windows.Forms.Button btn_caricaFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_leggiRiga;
+        private System.Windows.Forms.Button btn_leggi;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_scrivi;
     }
 }
 
